@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+<title>EpicInsights</title>
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
+<link rel="manifest" href="favicon_package_v0.16/site.webmanifest">
+<link rel="mask-icon" href="favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff"> 
+        
+<meta name="viewport" content="width=device-width, initial-scale=0.9">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+@media (max-width: 1000px ){
+  body {
+    
+    width: 100%;
+   }
+   p {
+    font-size: 70px;
+  }
+  
+}
+img {
+    width: 50%
+}
+body {
+    
+  width: 120%;
+ }
+ p {
+  font-size: 16px;
+}
+html{
+  width:100%;
+}
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 250px; /* Shift to the right by 250px */
+  width: calc(100% - 250px); /* Adjust the width to fit the remaining space */
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+#confirmation-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 100%; /* Ensure the content doesn't overflow the viewport */
+  box-sizing: border-box; /* Include padding and border in the box's total width and height */
+}
+
+#confirmation-box button {
+  margin: 0 10px;
+  padding: 20px;
+  cursor: pointer;
+}
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.Epic {
+  background-color: rgba(220, 200, 255, 0.8); /* Light purple tint */
+  margin: 2% 2%;
+  padding: 2%;
+  box-sizing: border-box;
+}
+
+.Insights {
+  width: 96%;
+  margin: 0 auto;
+}
+
+/* Additional styling for text if needed */
+h1 {
+  color: #333; /* Text color */
+}
+
+p {
+  color: #555; /* Text color */
+  font-weight: bolder;
+}
+
+
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="EpicInsights LOGO.png" class="w3-bar-item w3-button w3-theme-l1">Logo</a>
+    <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+    <a href="comment.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Comments</a>
+    <a href="https://feedback-epicinsights.anvil.app" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+    <a href="https://epicinsightspremium.anvil.app" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Account</a>
+   
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar" id="myoverlay">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menubar</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index.html">Home</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">About</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="comment.html">Comments</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="Contact.html">Contact</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://epicinsightspremium.anvil.app">Account</a>
+  
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+     <div class="Epic">
+      <div class="Insights">
+      <h1 class="w3-text-teal"><b>Welcome to EpicInsights - Your Gateway to Extraordinary Fantasy Worlds</b></h1>
+      
+      <p><b>Dear Readers,<br><br><br>
+
+        Welcome to EpicInsights, your ultimate destination for a mesmerizing journey through extraordinary realms, mythical adventures, and captivating stories. As you step into the enchanting universe of EpicInsights, you are embarking on a quest to discover the very best in fantasy literature, carefully curated to transport you to worlds beyond imagination.<br><br><br>
+        
+        At EpicInsights, we understand the insatiable thirst for epic tales, and we've meticulously handpicked a collection of 100 books that promise to capture your imagination, stir your emotions, and leave you yearning for more. Whether you're a seasoned fantasy enthusiast or just starting your adventure into the genre, our carefully selected titles offer a diverse tapestry of worlds, characters, and narratives that will leave an indelible mark on your literary journey.<br><br><br>
+                                                                                                                                                                                                                                                             This time, our focus is on uncovering hidden gems in the world of fantasy fiction.
+        While you may find familiar titles from renowned authors gracing these pages, be prepared to discover a trove of lesser-known masterpieces that have garnered resounding praise from the passionate readers who have unearthed their magic. My mission is to curate a collection that transcends the boundaries of popular fantasy literature, shedding light on brilliant narratives that might have slipped beneath the radar.<br><br><br>
+        
+        As we delve into the realms of dragons, wizards, and mythical lands, anticipate encountering both celebrated classics and hidden treasures. Some of these tales may be familiar, having graced the shelves of fantasy aficionados for years, while others are diamonds in the rough, waiting for you to unearth their captivating stories. Join me in exploring these fantastical worlds, where every page promises an adventure and every chapter unveils the extraordinary. Welcome to a literary odyssey where the known and the unknown coalesce in the pursuit of the best epic fantasy books ever written.<br><br><br><br>
+        **Embark on a Literary Odyssey**<br><br><br>
+        
+        Our collection spans the realms of high fantasy, epic adventures, and modern light fantasy. From Brandon Sanderson's intricately woven worlds to the spellbinding tales of magical realism reminiscent of Neil Gaiman, every book at EpicInsights promises an immersive experience. Traverse the intricate plots of political intrigue, witness the clash of swords in epic battles, and immerse yourself in the fantastical landscapes crafted by masterful storytellers.<br><br><br><br>
+        
+        **Discover Hidden Gems**<br><br><br><br>
+        
+        Not only will you find renowned works like Patrick Rothfuss's "The Name of the Wind" and Brandon Sanderson's "Mistborn," but also hidden gems that might have eluded your literary radar. These books, with their compelling narratives and rich world-building, have received not only critical acclaim but also garnered high praise from readers like yourself.<br><br><br><br><br>
+        
+        **A Haven for Book Enthusiasts**<br><br><br>
+        
+        EpicInsights is more than just a website; it's a haven for book enthusiasts seeking a refuge in the vast realm of fantasy literature. Bid farewell to endless searches and uncertainty, for our collection assures you that your quest for exceptional books ends here. Each title has been carefully vetted, ensuring not only literary excellence but also a delightful reading experience that transcends the boundaries of the ordinary.<br><br><br><br><br>
+        
+        **A Personal Touch**<br><br><br>
+        
+        Rest assured, every book in our collection has been chosen with a passion for storytelling and a commitment to providing you with an unforgettable reading journey. I, as the curator, have dedicated countless hours to researching, exploring, and handpicking each title. This collection is a testament to my love for fantasy literature and my desire to share the joy of discovering incredible stories with fellow enthusiasts.<br><br><br><br><br>
+        
+        **Why EpicInsights?**<br><br><br>
+        
+        - **Quality Assurance:** Our collection features books with consistently high ratings, ensuring that your precious reading time is spent on stories that truly captivate and resonate.<br><br><br>
+          
+        - **Diversity of Selection:** Explore a wide range of sub-genres, from epic fantasies with sprawling landscapes to modern light fantasy that brings magic into our contemporary world.<br><br><br>
+        
+        - **No More Endless Searches:** Say goodbye to the frustration of sifting through countless titles. We've done the hard work for you, so you can spend more time immersed in the worlds created by these talented authors.<br><br><br>
+        
+        - **A Community of Enthusiasts:** Join a community of like-minded readers who share a passion for fantasy literature. Engage in discussions, share your favorite reads, and connect with others who appreciate the magic of a well-told story.<br><br><br>
+        
+        As you delve into the realms of EpicInsights, may you find not just books, but gateways to extraordinary adventures, characters that become companions, and stories that leave an everlasting imprint on your soul. Your search for exceptional fantasy literature ends here, and a treasure trove of enchanting tales awaits your discovery.<br><br><br>
+        
+        Welcome to EpicInsights – Where Fantasy Becomes Reality.<br><br><br>
+        
+        Happy Reading!<br><br>
+        
+        Om Patil[Dragonord_108]<br><br>
+        Creator,EpicInsights</p></b>
+        <br><br><br><br>
+      
+      
+      <button onclick="showConfirmationBox()"style="background-color: purple; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+       Click To Reveal 50+ More lot Better Than This Fantasy Books With More Information
+    </button>
+    </div>
+  </div>
+    <div id="overlay">
+      <div id="confirmation-box">
+        <p>If You Click On Login Button You Can Gain Access To Best Fantasy Books That I guarantee That You Will Like...Click On Login Button To Go To EpicInsights Premium sit Which Has Best Fantasy books Ever😉 </p>
+        <button onclick="closeConfirmationBox()">Cancel</button>
+        <button onclick="redirectToTarget()">Login</button>
+      </div>
+    </div>
+      <p><p><b>These Are Some Quizzes To Let You Find The Fantasy Books You Want😜😉⏩➡️</b></p>
+      <a href="https://bookriot.com/thought-provoking-fantasy-book-quiz/"class="fcc-btn"><b>Click Here To Go To Fantasy Books Quiz</b></a><br>
+      <a href="https://www.getunderlined.com/quiz/ya-fantasy-book-quiz/"class="fcc-btn"><b>Click Here To Go To Fantasy Books Quiz</b></a><br>
+      <a href="https://www.proprofs.com/quiz-school/story.php?title=what-scifi-fantasy-book-should-i-read-next"class="fcc-btn"><b>Here To Go To Fantasy And Sci-fi Books Quiz</b></a>
+      </div>
+      <br><br><br><br><br><br><br><br>
+      
+
+    <ol>
+      <li> <div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        
+        <img src="https://m.media-amazon.com/images/I/51R9SCYYPPL.jpg" alt="Book 1">
+        <h2 class="glow">The Broken Empire Trilogy</h2>
+        <p><b>Author:</b> Mark Lawrence</p>
+        <p><b>Genre:</b> fantasy</p>
+        <p><b>Published:</b> 2022</p>
+        <p><b>Description:</b> Follow the cunning antihero Jorg Ancrath in a dark world where power and ambition reign, exploring themes of redemption and morality.<br>
+  Set in post-apocalyptic Europe, the trilogy follows the life of Jorg Ancrath as he goes from scorned prince to Emperor; using whatever means necessary.<br><br>
+  From being a privileged royal child, raised by a loving mother, Jorg Ancrath has become the Prince of Thorns, a charming, immoral boy leading a grim band of outlaws in a series of raids and atrocities. The world is in chaos: violence is rife, nightmares everywhere. Jorg has the ability to master the living and the dead, but there is still one thing that puts a chill in him. Returning to his father's castle Jorg must confront horrors from his childhood and carve himself a future with all hands turned against him.<br><br>
+  
+  PRINCE OF THORNS, KING OF THORNS and EMPEROR OF THORNS are a remarkable new trilogy by one of fantasy fiction's newest rising stars. Together, they weave a tale of blood and treachery, magic and brotherhood and paint a compelling and brutal, and sometimes beautiful, picture of an exceptional boy on his journey toward manhood and the throne.</p>
+      </div><br><br><br>
+     <li> <div class="w3-row w3-padding-64">
+      <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/516tAF-OHaL._SX329_BO1,204,203,200_.jpg" alt="Book 2">
+        <h2 class="glow">The Inheritance Trilogy</h2>
+        <p><b>Author:</b> N. K. Jemisin</p>
+        <p><b>Genre:</b> fantasy</p>
+        <p><b>Published:</b> 2010–2011</p>
+        <p class><b>Description:</b>The Inheritance Trilogy omnibusincludes the novels: The Hundred Thousand Kingdoms, The Broken Kingdoms, The Kingdom of Gods, and a brand new novella set in the same world: The Awakened Kingdom.<br><br>
+  
+          A REALM OF GODS AND MORTALS.<br>
+          Yeine Darr is an outcast from the barbarian north. But when her mother dies under mysterious circumstances, she is summoned to the majestic city of Sky. There, to her shock, Yeine is named an heiress to the king. But the throne of the Hundred Thousand Kingdoms is not easily won, and Yeine is thrust into a vicious power struggle.<br><br>
+          
+          
+          The Inheritance Trilogy The Hundred Thousand KingdomsThe Broken KingdomsThe Kingdom of Gods
+          The Inheritance Trilogy (omnibus edition) Shades in Shadow: An Inheritance Triptych (e-only short fiction) The Awakened Kingdom (e-only novella)</p>
+      </div>
+     <li> <div class="w3-row w3-padding-64">
+      <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/61gD8hj2PxL._CLa%7C1156,1000%7C71QqprhdadL.jpg,61-47rMh-YL.jpg%7C0,0,525,1000+631,0,525,1000+262,0,631,1000_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">Powder Mage Trilogy</h2>
+        <p><b>Author: </b>Brian McClellan</p>
+        <p><b>Genre:</b> fantasy</p>
+        <p><b>Published:</b>2013–2015 </p>
+        <p class><b>Description:</b>In a world where mages control gunpowder and bullets, a brilliant general must defend his country from both war and insurrection. Check out the complete Powder Mage Trilogy in this omnibus edition, a series that Brandon Sanderson called "Just plain awesome!"<br>
+  
+          In Promise of Blood: Field Marshal Tamas' coup against his king sent corrupt aristocrats to the guillotine and brought bread to the starving. But it also provoked war with the Nine Nations, internal attacks by royalist fanatics. Stretched to his limit, Tamas is relying heavily on his few remaining powder mages, including the embittered Taniel, a brilliant marksman who also happens to be his estranged son, and Adamat, a retired police inspector whose loyalty is being tested by blackmail.<br>
+          
+          In The Crimson Campaign: Drastically outnumbered and pursued by the enemy's best, Tamas must lead his men on a reckless march through northern Kez to safety, and back over the mountains so that he can defend his country from an angry god, Kresimir.<br>
+          
+          In The Autumn Republic: Field Marshal Tamas returns to his beloved country to find that for the first time in history, the capital city of Adro lies in the hands of a foreign invader. His son is missing, his allies are indistinguishable from his foes, and reinforcements are several weeks away.<br>
+          </p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/B10qne9o6HS._SY300_.png" alt="Book 2">
+        <h2 class="glow">The Chronicles of the Exile Series</h2>
+        <p><b>Author: </b>Marc Turner</p>
+        <p><b>Genre: </b>fantasy</p>
+        <p><b>Published:</b> 2015-2016</p>
+        <p class><b>Description:</b>The Chronicles of the Exile is a science fiction and fantasy book series written by author Marc Turner. The series is known for its intricate world-building, complex characters, and epic storytelling. It consists of multiple books, each contributing to a larger narrative. The series follows a diverse cast of characters, including mages, gods, pirates, and assassins, as they navigate a richly detailed and immersive fantasy world.<br>
+  
+          The central theme of the series revolves around power struggles, political intrigue, and the clash between various factions and individuals with differing agendas. Magic, mythology, and ancient prophecies are interwoven into the plot, adding depth to the overarching storyline.<br>
+          
+          Readers can expect a mix of action, adventure, magic, and character development throughout the series. While it might have elements of traditional fantasy, "The Chronicles of the Exile" often subverts genre conventions and explores morally complex themes.<br>
+          </p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/A11rEdslW0L._CLa%7C3054,2560%7C91ZaPjzdsQL.jpg,A1yowdh9p7L.jpg%7C0,0,1388,2560+1666,0,1388,2560+694,0,1666,2560_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">The Moontide Quartet</h2>
+        <p><b>Author: </b> David Hair </p>
+        <p><b>Genre:</b> fantasy</p>
+        <p><b>Published:</b>2013-2016 </p>
+        <p class><b>Description:</b>The Moontide is coming. Urte stands on the brink of war. Now three seemingly ordinary people will decide the fate of the world.<br>
+  
+          Urte is divided, its two continents separated by impassable seas. But once every twelve years, the Moontide sees the waters sink to their lowest point and the Leviathan Bridge is revealed, linking east to west for twenty-four short months.<br>
+          
+          The Rondian emperor, overlord of the west, is hell-bent on ruling both continents, and for the last two Moontides he has led armies of battle-magi across the bridge on crusades of conquest, pillaging his way across Antiopa.<br>
+          
+          But the people of the east have been preparing - and, this time, they are ready for a fight.<br>
+          
+          An epic fantasy, rich in intricate plots, intrigue and treachery. Vast forces collide and ordinary people make heart-rending choices that will shake the world.<br>
+          
+          'A complex world populated by a rich and diverse cast of characters . . . Recommended for fans of George R.R. Martin, Brandon Sanderson and Patrick Rothfuss' - Library Journal<br>
+          </p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/81gyscLM9HL._CLa%7C2566,2100%7C91yUdSa4FWL.jpg,81GjEmy3olL.jpg%7C0,0,1166,2100+1400,0,1166,2100+583,0,1400,2100_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">The Chronicles of the Unhewn Throne</h2>
+        <p><b>Author: </b> Brian Staveley</p>
+        <p><b>Genre:</b> fantasy</p>
+        <p><b>Published:</b>8 July 2021. </p>
+        <p class><b>Description:</b>In The Emperor's Blades by Brian Staveley, the emperor of Annur is dead, slain by enemies unknown. His daughter and two sons, scattered across the world, do what they must to stay alive and unmask the assassins. But each of them also has a life-path on which their father set them, destinies entangled with both ancient enemies and inscrutable gods.<br>
+  
+          Kaden, the heir to the Unhewn Throne, has spent eight years sequestered in a remote mountain monastery, learning the enigmatic discipline of monks devoted to the Blank God. Their rituals hold the key to an ancient power he must master before it's too late.<br>
+          
+          An ocean away, Valyn endures the brutal training of the Kettral, elite soldiers who fly into battle on gigantic black hawks. But before he can set out to save Kaden, Valyn must survive one horrific final test.<br>
+          
+          At the heart of the empire, Minister Adare, elevated to her station by one of the emperor's final acts, is determined to prove herself to her people. But Adare also believes she knows who murdered her father, and she will stop at nothing—and risk everything—to see that justice is meted out.<br>
+          
+          Chronicle of the Unhewn Throne<br>
+          The Emperor's Blades<br>
+          The Providence of Fire<br>
+          The Last Mortal Bond<br>
+          
+          Other books in the world of the Unhewn Throne<br>
+          Skullsworn (forthcoming)<br>
+          </p>
+          
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/71ECjJC-B9L._CLa%7C1193,1000%7C71-tVSb+hXL.jpg,81W65Ll2LWL.jpg%7C0,0,542,1000+651,0,542,1000+271,0,651,1000_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">The Dagger and the Coin</h2>
+        <p><b>Author:</b>Daniel Abraham </p>
+        <p><b>Genre: </b>fantasy</p>
+        <p><b>Published:</b>April 2011 – March 2016 </p>
+        <p class><b>Description:</b>The dragons are gone, the powerful magics that broke the world diluted to little more than parlour tricks, but the kingdoms of men remain and the great game of thrones goes on. Lords deploy armies and merchant caravans as their weapons, manoeuvring for wealth and influence. But a darker power is rising - an unlikely leader with an ancient ally threatens to unleash again the madness that destroyed the world once already. Only one man knows the truth and, from the shadows, must champion humanity. The world's fate stands on the edge of a Dagger, its future on the toss of a Coin . . .
+          </p>
+      </div>
+      <li> <div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/91+cTS10d4L._CLa%7C2570,2260%7C91Gkdkk3JbL.jpg,91qV9F2pB9L.jpg%7C0,0,1168,2260+1402,0,1168,2260+584,0,1402,2260_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow"> The Shadow Campaigns</h2>
+        <p><b>Author:</b>Django Wexler</p>
+        <p><b>Genre:</b> fantasy</p>
+        <p><b>Published:</b>2013-2015 </p>
+        <p class><b>Description:</b>Set in an alternate nineteenth century, muskets and magic are weapons to be feared in the first “spectacular epic” (Fantasy Book Critic) in Django Wexler’s Shadow Campaigns series.<br>
+  
+          Captain Marcus d’Ivoire, commander of one of the Vordanai empire’s colonial garrisons, was serving out his days in a sleepy, remote outpost—until a rebellion left him in charge of a demoralized force clinging to a small fortress at the edge of the desert.<br>
+          
+          To flee from her past, Winter Ihernglass masqueraded as a man and enlisted as a ranker in the Vordanai Colonials, hoping only to avoid notice. But when chance sees her promoted to command, she must lead her men into battle against impossible odds.<br>
+          
+          Their fate depends on Colonel Janus bet Vhalnich. Under his command, Marcus and Winter feel the tide turning and their allegiance being tested. For Janus’s ambitions extend beyond the battlefield and into the realm of the supernatural—a realm with the power to reshape the known world and change the lives of everyone in its path.<br>
+          </p>
+      </div>
+      <li> <div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/81KRv4dt38L._CLa%7C2957,2475%7C81HHeui0g8L.jpg,91Wt2Uga3IL.jpg%7C0,0,1344,2475+1613,0,1344,2475+672,0,1613,2475_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">The Sacred Throne</h2>
+        <p><b>Author: </b>Myke Cole </p>
+        <p><b>Genre: </b>fantasy</p>
+        <p><b>Published: </b>2018-2019</p>
+        <p class><b>Description:</b>"Cole weaves a fantasy world that feels comfortably familiar, then goes to places you’d never expect. You won’t stop turning pages until the stunning finish." —Peter V. Brett<br>
+  
+          Myke Cole, star of CBS's Hunted and author of the Shadow Ops series, debuts the Sacred Throne epic fantasy trilogy with The Armored Saint, a story of religious tyrants, arcane war-machines, and underground resistance that will enthrall epic fantasy readers of all ages.<br>
+          
+          In a world where any act of magic could open a portal to hell, the Order insures that no wizard will live to summon devils, and will kill as many innocent people as they must to prevent that greater horror. After witnessing a horrendous slaughter, the village girl Heloise opposes the Order, and risks bringing their wrath down on herself, her family, and her village.<br>
+          
+          </p>
+      </div>
+      <li> <div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/61vEQukegcL._SX322_BO1,204,203,200_.jpg" alt="Book 2">
+        <h2 class="glow">The Aeons' Gate Trilogy</h2>
+        <p><b>Author:</b> Sam Sykes</p>
+        <p><b>Genre:</b> fantasy</p>
+        <p><b>Published:</b>15 December 2015 </p>
+        <p class><b>Description: </b>There are only a few productive things a man can do once he picks up a sword.<br>
+  
+          And the very lowest of these is to become an adventurer, like Lenk and his companions.<br>
+          
+          For the right price, no deed is too dirty, no task is too dangerous, no foe too ferocious. Not even a demon.<br>
+          
+          From wars ancient and terrible, wounds are bleeding. From seas deep and fathomless, demons are rising. From the mouth of hell, the Kraken Queen is calling. And all that stands between the damned and the mortal world are a pack of degenerates and the steel they carry.<br>
+          
+          Seas will rise. Heaven will fall.<br>
+         </p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/71+Duj6Tt0L._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">The Godblind Trilogy</h2>
+        <p><b>Author: </b>Anna Stephens</p>
+        <p><b>Genre: </b>fantasy</p>
+        <p><b>Published:</b>June 2017</p>
+        <p class><b>Description:</b>The Mireces worship the bloodthirsty Red Gods. Exiled from Rilpor a thousand years ago, and left to suffer a harsh life in the cold mountains, a new Mireces king now plots an invasion of Rilpor’s thriving cities and fertile earth.<br>
+  
+          Dom Templeson is a Watcher, a civilian warrior guarding Rilpor’s border. He is also the most powerful seer in generations, plagued with visions and prophecies. His people are devoted followers of the god of light and life, but Dom harbors deep secrets, which threaten to be exposed when Rillirin, an escaped Mireces slave, stumbles broken and bleeding into his village.<br>
+          
+          Meanwhile, more and more of Rilpor’s most powerful figures are turning to the dark rituals and bloody sacrifices of the Red Gods, including the prince, who plots to wrest the throne from his dying father in the heart of the kingdom. Can Rillirin, with her inside knowledge of the Red Gods and her shocking ties to the Mireces King, help Rilpor win the coming war?</p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/91hTy3IGQKL._CLa%7C2610,2295%7C91otSrycKJL.jpg,A1+iiLnnpUL.jpg%7C0,0,1186,2295+1424,0,1186,2295+593,0,1424,2295_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">The Book of the Ancestor</h2>
+        <p><b>Author: </b> Mark Lawrence</p>
+        <p><b>Genre: </b>fantasy</p>
+        <p><b>Published:</b>Apr-2017_Feb-2020</p>
+        <p class><b>Description:</b>The international bestselling author of the Broken Empire and the Red Queen’s War trilogies begins a stunning epic fantasy series about a secretive order of holy warriors...<br>
+   
+          At the Convent of Sweet Mercy, young girls are raised to be killers. In some few children the old bloods show, gifting rare talents that can be honed to deadly or mystic effect. But even the mistresses of sword and shadow don’t truly understand what they have purchased when Nona Grey is brought to their halls.<br>
+          
+          A bloodstained child of nine falsely accused of murder, guilty of worse, Nona is stolen from the shadow of the noose. It takes ten years to educate a Red Sister in the ways of blade and fist, but under Abbess Glass’s care there is much more to learn than the arts of death. Among her class Nona finds a new family—and new enemies. <br>
+           
+          Despite the security and isolation of the convent, Nona’s secret and violent past finds her out, drawing with it the tangled politics of a crumbling empire. Her arrival sparks old feuds to life, igniting vicious struggles within the church and even drawing the eye of the emperor himself.<br>
+           
+          Beneath a dying sun, Nona Grey must master her inner demons, then loose them on those who stand in her way.</p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="data:image/jpeg;base64,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" alt="Book 2">
+        <h2 class="glow">The Relic Guild</h2>
+        <p><b>Author: </b>Edward Cox</p>
+        <p><b>Genre: </b>fantasy</p>
+        <p><b>Published:</b>July 2015</p>
+        <p class><b>Description:</b>Magic caused the war. Magic is forbidden. Magic will save us.
+  
+          It was said the Labyrinth had once been the great meeting place, a sprawling city at the heart of an endless maze where a million humans hosted the Houses of the Aelfir. The Aelfir who had brought trade and riches, and a future full of promise. But when the Thaumaturgists, overlords of human and Aelfir alike, went to war, everything was ruined and the Labyrinth became an abandoned forbidden zone, where humans were trapped behind boundary walls 100 feet high.<br>
+          
+          Now the Aelfir are a distant memory and the Thaumaturgists have faded into myth. Young Clara struggles to survive in a dangerous and dysfunctional city, where eyes are keen, nights are long, and the use of magic is punishable by death. She hides in the shadows, fearful that someone will discover she is touched by magic. She knows her days are numbered. But when a strange man named Fabian Moor returns to the Labyrinth, Clara learns that magic serves a higher purpose and that some myths are much more deadly in the flesh.<br>
+          
+          The only people Clara can trust are the Relic Guild, a secret band of magickers sworn to protect the Labyrinth. But the Relic Guild are now too few. To truly defeat their old nemesis Moor, mightier help will be required. To save the Labyrinth - and the lives of one million humans - Clara and the Relic Guild must find a way to contact the worlds beyond their walls.</p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/913CFPocu8L._CLa%7C2619,2560%7C813xFJrbyZL.jpg,91dvd9z5rtL.jpg%7C0,0,1190,2560+1429,0,1190,2560+595,0,1429,2560_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">The Legends of the First Empire</h2>
+        <p><b>Author: </b>Michael J. Sullivan</p>
+        <p><b>Genre: </b>fantasy</p>
+        
+        <p class><b>Description:</b>One of fantasy’s finest next-generation storytellers continues to break new ground.<br>
+  
+          Michael J. Sullivan’s trailblazing career began with the breakout success of his Riyria series: full-bodied, spellbinding fantasy adventures whose imaginative scope and sympathetic characters won a devoted readership and comparisons to fantasy masters Brandon Sanderson, Scott Lynch, and J.R.R. Tolkien himself. Now Age of Myth inaugurates an original five-book series.<br>
+          
+          Since time immemorial, humans have worshipped the gods they call Fhrey, truly a race apart: invincible in battle, masters of magic, and seemingly immortal. But when a god falls to a human blade, the balance of power between humans and those they thought were gods changes forever.<br>
+          
+          Now only a few stand between humankind and annihilation: Raithe, reluctant to embrace his destiny as the God Killer; Suri, a young seer burdened by signs of impending doom; and Persephone, who must overcome personal tragedy to lead her people. The Age of Myth is over. The time of rebellion has begun.<br>
+          
+          Magic, fantasy, and mythology collide in Michael J. Sullivan’s Legends of the First Empire series:<br>
+          AGE OF MYTH • AGE OF SWORDS • AGE OF WAR</p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/91xnGvq-2oL._CLa%7C3023,2560%7C91gSOQznRxL.jpg,91yUKxhbzlL.jpg%7C0,0,1374,2560+1649,0,1374,2560+687,0,1649,2560_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">The Sunsurge Quartet</h2>
+        <p><b>Author: </b> David Hair </p>
+        <p><b>Genre: </b>fantasy</p>
+        
+        <p class><b>Description:</b>Desperate for the next Game of Thrones? Pick up Empress of the Fall for your full-on fix of epic fantasy.<br>
+  
+          The Emperor is dead - long live the Empress!<br>
+          
+          Emperor Constant is dead and his rivals are scrabbling for power - but any misstep could plunge the land, already devastated by the shocking outcome of the Third Crusade, into a calamitous civil war.<br>
+          
+          The Imperial throne is not the only one in jeopardy. Two brothers, imprisoned veterans of the Crusades, finally return home to find their father's kingdom being plundered - but the price of regaining their birthright will have far-reaching implications for the entire empire.<br>
+          
+          In the East, Sultan Salim, peacemaker and visionary ruler, faces his greatest challenge as his people demand an invasion of the West in retribution for the Rondian Crusades<br>
+          
+          And lurking in the darkness, orchestrating both the power struggles and the inevitable conflicts, is a shadowy group threatening to destroy civilisation itself.<br>
+          
+          Once more, Urte stands on the brink of cataclysm.</p>
+      </div>
+      
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/519dhTbVbTL._SY346_.jpg" alt="Book 2">
+        <h2 class="glow">The Divine Cities Trilogy</h2>
+        <p><b>Author: </b>Robert Jackson Bennett</p>
+        <p><b>Genre: </b>fantasy</p>
+        
+        <p class><b>Description:</b>In a world where terrifying, capricious gods once walked the earth, enslaving and brutalizing millions, three unforgettable protagonists struggle to come to terms with the mysteries these divinities left behind— and to make sure these cruel masters do not rise again.<br>
+   
+          In City of Stairs, an unassuming young woman named Shara Thivani arrives in Bulikov, the city that once wielded the powers of the gods to conquer the world. Officially, she is just another junior diplomat, dispatched by the city’s new colonial masters; unofficially, she is one of her country’s most accomplished spies, on a mission to solve a murder. As she pursues the killer, she begins to suspect that the gods who once guarded Bulikov are not as dead as they seem, and that the city’s cruel reign may begin anew.<br>
+           
+          In City of Blades, General Turin Mulaghesh—foul-mouthed hero of the battle of Bulikov, rumored war criminal, ally of an embattled prime minister—is pressed into service one last time, investigating a terrifying discovery in the city of Voortyashtan, once the stronghold of the god of war and death. Voortyashtan’s god is most certainly dead, but something is awakening in the city. And someone is determined to make the world tremble at the city’s awful power once again.<br>
+           
+          In City of Miracles, the formidable, seemingly unkillable Sigrud je Harkvaldsson returns from self-imposed exile on a mission of revenge, only to find himself embroiled in a battle that may be beyond even his abilities to win—a secret, decades-long war that will force him to confront the last mysteries of Bulikov, the city of miracles itself.</p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/71Xz9GLXr+L._CLa%7C2564,2100%7C71Vq3ZLccYL.jpg,71n1QebH0yL.jpg%7C0,0,1165,2100+1399,0,1165,2100+582,0,1399,2100_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">Bloodsounder's Arc</h2>
+        <p><b>Author: </b>Jeff Salyards</p>
+        <p><b>Genre: </b>fantasy</p>
+       
+        <p class><b>Description:</b>Many tales are told of the Syldoon Empire and its fearsome soldiers, who are known throughout the world for their treachery and atrocities. Some say that the Syldoon eat virgins and babies  or perhaps their own mothers. Arkamondos, a bookish young scribe, suspects that the Syldoon’s dire reputation
+          may have grown in the retelling, but he’s about to find out for himself. Hired to chronicle the exploits of a band of rugged Syldoon warriors, Arki finds himself both frightened and fascinated by the men's enigmatic leader, Captain Braylar Killcoin. A secretive, mercurial figure haunted by the memories of those he’s killed with his deadly flail, Braylar has already disposed of at least one impertinent scribe and Arki might be next.<br>
+          
+          Archiving the mundane doings of millers and merchants was tedious, but at least it was safe. As Arki heads off on a mysterious mission into parts unknown, in the company of the coarse, bloody-minded Syldoon,he is promised a chance to finally record an historic adventure well worth the telling, but first he must survive the experience! A gripping military fantasy in the tradition of Glen Cook, Scourge of the Betrayer explores the brutal politics of Empireand the searing impact of violence and dark magic on a man’s soul.<br>
+          
+          Skyhorse Publishing, under our Night Shade and Talos imprints, is proud to publish a broad range of titles for readers interested in science fiction (space opera, time travel, hard SF, alien invasion, near-future dystopia), fantasy (grimdark, sword and sorcery, contemporary urban fantasy, steampunk, alternative history), and horror (zombies, vampires, and the occult and supernatural), and much more. While not every title we publish becomes a New York Times bestseller, a national bestseller, or a Hugo or Nebula award-winner, we are committed to publishing quality books from a diverse group of authors.</p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/91fOveubDOL._CLa%7C2814,2327%7C810lxFBmbjL.jpg,817JWrej2cL.jpg%7C0,0,1279,2327+1535,0,1279,2327+639,0,1535,2327_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow"> Worldbreaker Saga</h2>
+        <p><b>Author: </b> Kameron Hurley</p>
+        <p><b>Genre: </b>fantasy</p>
+      
+        <p class><b>Description:</b>An ambitious tale of magic, war, and parallel worlds that pushes the boundaries of epic fantasy—from a two-time Hugo Award winner<br>
+  
+          On the eve of a recurring catastrophic event known to extinguish nations and reshape continents, a troubled orphan evades death and slavery to uncover her own bloody past . . . while a world goes to war with itself. <br>
+          
+          In the frozen kingdom of Saiduan, invaders from another realm are decimating whole cities, leaving behind nothing but ash and ruin. At the heart of this war lie the pacifistic Dhai people, once enslaved by the Saiduan and now courted by their former masters to provide aid against the encroaching enemy.<br>
+           
+          As the dark star of the cataclysm rises, an illegitimate ruler is tasked with holding together a country fractured by civil war; a precocious young fighter is asked to betray his family to save his skin; and a half-Dhai general must choose between the eradication of her father's people or loyalty to her alien Empress. Through tense alliances and devastating betrayal, the Dhai and their allies attempt to hold against a seemingly unstoppable force as enemy nations prepare for a coming together of worlds as old as the universe itself. In the end, one world will rise—and many will perish.<br>
+          
+          Stretching from desolate tundras to steamy, semi-tropical climes seething with sentient plant life, this is an epic tale of blood mages and mercenaries, emperors and priestly assassins, who must unite to save a world on the brink of ruin.<br>
+          
+          File Under: Fantasy [ Orphaned Child | World at War | Blood Magic | The Fluidity of Gender]</p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/81kuXk94B9L._CLa%7C2933,2400%7C81+SKX-ru6L.jpg,81GmgPwKHcL.jpg%7C0,0,1333,2400+1600,0,1333,2400+666,0,1600,2400_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">Chronicles of the Black Gate</h2>
+        <p><b>Author: </b> Phil Tucker </p>
+        <p><b>Genre: </b>fantasy</p>
+      
+        <p class><b>Description:</b>From Book 1: The first book in the new epic fantasy series readers are comparing to David Gemmell and Raymond E. Feist.<br>
+  
+          r/Fantasy 2016 Stabby Award Finalist<br>
+          2016 #SPFBO Finalist<br>
+          2016 Indie Spotlight - BestFantasyBooks.com<br>
+          
+          A war fueled by the dark powers of forbidden sorcery is about to engulf the Ascendant Empire. Agerastian heretics, armed with black fire and fueled by bitter hatred, seek to sever the ancient portals that unite the empire - and in so doing destroy it.<br>
+          
+          Asho--a squire with a reviled past--sees his liege, the Lady Kyferin, and her meager forces banished to an infamous ruin. Beset by tragedy and betrayal, demons and an approaching army, the fate of the Kyferins hangs by the slenderest of threads. Asho realizes that their sole hope of survival may lie hidden within the depths of his scarred soul--a secret that could reverse their fortunes and reveal the truth behind the war that wracks their empire.<br>
+          
+          Unpredictable, fast paced, and packed with unforgettable characters, The Path of Flames is the first installment in a gripping new epic fantasy series. Grab your copy today!
+          </p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/A1hiEnNe2kL._CLa%7C3056,2560%7C91MsqyF27EL.jpg,A1ZXxBe50sL.jpg%7C0,0,1389,2560+1667,0,1389,2560+694,0,1667,2560_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">The Winnowing Flame Trilogy</h2>
+        <p><b>Author: </b> Jen Williams</p>
+        <p><b>Genre: </b>fantasy</p>
+      
+        <p class><b>Description:</b>From Book 1: **Winner of the British Fantasy Award for Best Fantasy Novel** The first book in the award-winning Winnowing Flame trilogy. Epic fantasy for fans of Robin Hobb and Jay Kristoff.'Fantasy adventure at its very best' Starburst 'Williams excels at eldritch world-building' Guardian 'An original new voice in heroic fantasy' Adrian Tchaikovsky The great city of Ebora once glittered with gold. Now its streets are stalked by wolves. Tormalin the Oathless has no taste for sitting around waiting to die while the realm of his storied ancestors falls to pieces - talk about a guilt trip. Better to be amongst the living, where there are taverns full of women and wine.When eccentric explorer, Lady Vincenza 'Vintage' de Grazon, offers him employment, he sees an easy way out. Even when they are joined by a fugitive witch with a tendency to set things on fire, the prospect of facing down monsters and retrieving ancient artefacts is preferable to the abomination he left behind.But not everyone is willing to let the Eboran empire collapse, and the adventurers are quickly drawn into a tangled conspiracy of magic and war. For the Jure'lia are coming, and the Ninth Rain must fall...What readers are saying about THE NINTH RAIN:'The Ninth Rain was an amazing and captivating start to a trilogy; simple as that. I have a really good feeling that The Winnowing Flame Trilogy will become a new and long-awaited addition to my list of favorite trilogies of all time''What a world! What characters! What beasties! WHAT A BOOK!''I loved everything about this book: the characters, the plot, the monsters, the twists and turns. Masterfully handled and beautifully written'</p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/A1PdgFwtTmL._CLa%7C3087,2560%7CA12APdJJJBS.jpg,A1tDUef093L.jpg%7C0,0,1403,2560+1684,0,1403,2560+701,0,1684,2560_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">The Reborn Empire</h2>
+        <p><b>Author: </b>Devin Madson</p>
+        <p><b>Genre: </b>fantasy</p>
+      
+        <p class><b>Description:</b>A complex tale of war, politics, and lust for power." —The Guardian<br>
+  
+          War built the Kisian Empire. War will tear it down.<br>
+          
+          Seventeen years after rebels stormed the streets, factions divide Kisia. Only the firm hand of the god-emperor holds the empire together. But when an unexpected betrayal destroys a tense alliance with neighboring Chiltae, all that has been won comes crashing down.<br>
+          
+          In Kisia, Princess Miko Ts'ai is a prisoner in her own castle. She dreams of claiming her empire, but the path to power could rip it, and her family, asunder.<br>
+          
+          In Chiltae, assassin Cassandra Marius is plagued by the voices of the dead. Desperate, she accepts a contract that promises to reward her with a cure if she helps an empire fall.<br>
+          
+          And on the border between nations, Captain Rah e'Torin and his warriors are exiles forced to fight in a foreign war or die.<br>
+          
+          As an empire dies, three warriors will rise. They will have to ride the storm or drown in its blood.<br>
+          
+          We Ride the Storm is the epic launch of a bold and brutal fantasy series, perfect for readers of Mark Lawrence, John Gwynne, and Brian Staveley.<br>
+          
+          Praise for The Reborn Empire:<br>
+          
+          "An exciting new author in fantasy." —Mark Lawrence, author of Red Sister<br>
+          
+          "Imaginative worldbuilding, a pace that builds perfectly to a heart-pounding finale and captivating characters. Highly recommended." —John Gwynne, author of The Shadow of the Gods<br>
+          
+          The Reborn Empire<br>
+          We Ride the Storm<br>
+          We Lie with Death<br>
+          We Cry for Blood<br>
+          We Dream of Gods<br>
+          
+          For more from Devin Madson, check out:<br>
+          
+          The Vengeance Trilogy<br>
+          The Blood of Whisperers<br>
+          The Gods of Vice<br>
+          The Grave at Storm's End</p>
+      </div>
+      <li><div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+        <img src="https://m.media-amazon.com/images/I/71XW9WdhwwL._CLa%7C1862,1546%7C71+c5YKPE1L.jpg,71Yy24mMS7L.jpg%7C0,0,846,1546+1016,0,846,1546+423,0,1016,1546_._SY300_.jpg" alt="Book 2">
+        <h2 class="glow">The Vagrant</h2>
+        <p><b>Author: </b> Peter Newman</p>
+        <p><b>Genre: </b>fantasy</p>
+      
+        <p class><b>Description:</b>The Vagrant is his name. He has no other. Years have passed since humanity’s destruction emerged from the Breach. Friendless and alone he walks across a desolate, war-torn landscape. As each day passes the world tumbles further into depravity, bent and twisted by the new order, corrupted by the Usurper, the enemy and his infernal horde. His purpose is to reach the Shining City, last bastion of the human race and deliver the only weapon that may make a difference in the ongoing war. What little hope remains is dying. Abandoned by its leader, the Seven and its heroes, The Seraph Knights, the last defences of a once great civilization are crumbling into dust. But the Shining City is far away and the world is a very dangerous place.</p>
+      </div>
+   
+  <li><div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+    <img src="https://m.media-amazon.com/images/I/91z-1SDrGYL._CLa%7C2750,2400%7C919ArIst20L.jpg,9152rp7OezL.jpg%7C0,0,1250,2400+1500,0,1250,2400+625,0,1500,2400_._SY300_.jpg" alt="Book 2">
+    <h2 class="glow">The Tensorate</h2>
+    <p><b>Author: </b> Neon Yang</p>
+    <p><b>Genre: </b>fantasy</p>
+    
+    <p class><b>Description:</b>Joyously wild stuff. Highly recommended." ―The New York Times<br>
+  
+      One of the 100 Best Fantasy Books of All Time, according to Time Magazine<br>
+      
+      A Finalist for the Hugo, Nebula, and World Fantasy Awards for Best Novella<br>
+      
+      One of the 25 Best Fantasies of All Time, according to Good Housekeeping<br>
+      
+      The Black Tides of Heaven is one of a pair of unique, standalone introductions to Neon Yang's Tensorate Series, which Kate Elliott calls "effortlessly fascinating." For more of the story you can read its twin novella The Red Threads of Fortune, available simultaneously.<br>
+      
+      Mokoya and Akeha, the twin children of the Protector, were sold to the Grand Monastery as infants. While Mokoya developed her strange prophetic gift, Akeha was always the one who could see the strings that moved adults to action. While Mokoya received visions of what would be, Akeha realized what could be. What's more, they saw the sickness at the heart of their mother's Protectorate.<br>
+      
+      A rebellion is growing. The Machinists discover new levers to move the world every day, while the Tensors fight to put them down and preserve the power of the state. Unwilling to continue as a pawn in their mother's twisted schemes, Akeha leaves the Tensorate behind and falls in with the rebels. But every step Akeha takes towards the Machinists is a step away from Mokoya. Can Akeha find peace without shattering the bond they share with their twin?<br>
+      
+      The Tensorate Series<br>
+      Book 1: The Black Tides of Heaven<br>
+      Book 2: The Red Threads of Fortune<br>
+      Book 3: The Descent of Monsters<br>
+      Book 4: The Ascent to Godhood</p>
+  </div>
+  <li><div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+    <img src="https://m.media-amazon.com/images/I/81sQHIumbTL._CLa%7C3087,2560%7C81frRBg+3oL.jpg,91XoqAC7g2L.jpg%7C0,0,1403,2560+1684,0,1403,2560+701,0,1684,2560_._SY300_.jpg" alt="Book 2">
+    <h2 class="glow">The Lotus Kingdoms</h2>
+    <p><b>Author: </b> Elizabeth Bear</p>
+    <p><b>Genre: </b>fantasy</p>
+  
+    <p class><b>Description:</b>Hugo Award–winning author Elizabeth Bear returns to her critically acclaimed epic fantasy world of the Eternal Sky with a brand new trilogy.<br>
+  
+      Best SFF Books 2017—The Guardian<br>
+      Kirkus Best Science Fiction and Fantasy of 2017<br>
+      The Verge Recommended Fantasy for 2017<br>
+      Locus 2017 Recommended Reading List<br>
+      
+      The Stone in the Skull, the first volume in her new trilogy, takes readers over the dangerous mountain passes of the Steles of the Sky and south into the Lotus Kingdoms.<br>
+      
+      The Gage is a brass automaton created by a wizard of Messaline around the core of a human being. His wizard is long dead, and he works as a mercenary. He is carrying a message from the most powerful sorcerer of Messaline to the Rajni of the Lotus Kingdom. With him is The Dead Man, a bitter survivor of the body guard of the deposed Uthman Caliphate, protecting the message and the Gage. They are friends, of a peculiar sort.<br>
+      
+      They are walking into a dynastic war between the rulers of the shattered bits of a once great Empire.<br>
+      
+      The Lotus Kingdoms<br>
+      #1 The Stone in the Skull<br>
+      #2 The Red-Stained Wings<br>
+      
+      The Eternal Sky Trilogy<br>
+      #1 Range of Ghosts<br>
+      #2 Shattered Pillars<br>
+      #3 Steles of the Sky
+      </p>
+  </div>
+  <li><div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+    <img src="https://m.media-amazon.com/images/I/51LOLmHQaSL.jpg" alt="Book 2">
+    <h2 class="glow">The Redemption Trilogy</h2>
+    <p><b>Author: </b>AJ Sikes </p>
+    <p><b>Genre: </b>fantasy</p>
+    
+    <p class><b>Description:</b>Jed Welch thought washing out of the Marines Corps was the worst thing that could happen. It landed him back in his old life of crime, running with drug dealers in Queens. Just when he thought his luck couldn’t get worse, a global viral outbreak unleashed virulent hordes of Alpha predators. He quickly finds himself alone, saving his own skin, and on the run in New York City as the outbreak spreads.<br>
+  
+      In a twist of fate, Jed discovers the remnants of a devastated Marine platoon, and decides to join them in the fight for survival. With these new allies, Jed has more than a new safe haven. He finds a renewed sense of mission and the conviction to serve again. Together, he and the other Marines will take the fight to the enemy, striking them where it matters most.<br>
+      
+      As the battles rage across the earth and humanity slowly gains a foothold, Jed grows into a leader, bringing his squad into the front lines against a new and more dangerous threat than any they have yet faced.</p>
+  </div>
+  <li><div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+    <img src="https://m.media-amazon.com/images/I/71UWJo3mjBL._CLa%7C2564,2123%7C81if61P5LTL.jpg,71ecDiarRHL.jpg%7C0,0,1165,2123+1399,0,1165,2123+582,0,1399,2123_._SY300_.jpg" alt="Book 2">
+    <h2 class="glow">Witchy War Series</h2>
+    <p><b>Author: </b>D.J. Butler </p>
+    <p><b>Genre: </b>fantasy</p>
+  
+    <p class><b>Description:</b>A STUNNING BAEN BOOKS DEBUT. A brilliant Americana flintlock fantasy novel set in a world of Appalachian magic that works.<br>
+  
+      Sarah Calhoun is the fifteen-year-old daughter of the Elector Andrew Calhoun, one of Appalachee’s military heroes and one of the electors who gets to decide who will next ascend as the Emperor of the New World. None of that matters to Sarah. She has a natural talent for hexing and one bad eye, and all she wants is to be left alone—especially by outsiders.<br>
+      
+      But Sarah’s world gets turned on its head at the Nashville Tobacco Fair when a Yankee wizard-priest tries to kidnap her. Sarah fights back with the aid of a mysterious monk named Thalanes, who is one of the not-quite-human Firstborn, the Moundbuilders of the Ohio. It is Thalanes who reveals to Sarah a secret heritage she never dreamed could be hers.<br>
+      
+      Now on a desperate quest with Thalanes to claim this heritage, she is hunted by the Emperor’s bodyguard of elite dragoons, as well as by darker things—shapeshifting Mockers and undead Lazars, and behind them a power more sinister still. If Sarah cannot claim her heritage, it may mean the end to her, her family—and to the world where she is just beginning to find her place.<br>
+      
+      At the publisher's request, this title is sold without DRM (Digital Rights Management).<br>
+      
+      Praise for Witchy Eye and D.J. Butler:<br>
+      
+      “… you can’t stop yourself from taking another bite…and another…and another….I didn’t want to stop reading…. Kudos!” R.A. Salvatore, New York Times Bestselling Author<br>
+      
+      “ Excellent book. I am impressed by the creativity and the depth of the world building. Dave Butler is a great storyteller.” – Larry Correia<br>
+      
+      “WITCHY EYE is an intricate and imaginative alternate history with a cast of characters and quirky situations that would make a Dickens novel proud.” —Kevin J. Anderson, New York Times bestselling author of Eternity's Mind<br>
+      
+      "David's a pro storyteller, and you're in for a great ride."—Larry Dixon<br>
+      
+      "… a fascinating, grittily-flavored world of living legends. Hurry up and write the next one, Dave."—Cat Rambo, author of Beasts of Tabat<br>
+      
+      "This is enchanting! I'd love to see more."—Mercedes Lackey New York Times bestselling author<br>
+      
+      “Goblin Market meets Magical Musketpunk... A great ride that also manages to cover some serious cultural terrain.” —Charles E. Gannon, author of the thrice-Nebula nominated Caine Riordan series<br>
+      
+      "Witchy-Eye is a brilliant blend of historical acumen and imagination, a tour-de-force that is at once full of surprises and ultimately heart-warming. This is your chance to discover one of the finest new stars writing today!"–David Farland, New York Times bestselling author<br>
+      
+      “A gritty, engrossing mash-up of history, fantasy, and magic. Desperate characters careen from plot twist to plot twist until few are left standing.”—Mario Acevedo, author of Rescue From Planet Pleasure.<br>
+      
+      "Captivating characters. Superb world-building. Awesome magic. Butler fuses fantasy and history effortlessly, creating a fascinating new American epic. Not to be missed!"—Christopher Husberg, author of Duskfall</p>
+  </div>
+  
+  <li><div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+    <img src="https://m.media-amazon.com/images/I/91ZKAfv2gbL._CLa%7C3015,2560%7C81egP5vEVWL.jpg,91VbpWFQvSL.jpg%7C0,0,1370,2560+1645,0,1370,2560+685,0,1645,2560_._SY300_.jpg" alt="Book 2">
+    <h2 class="glow">The God Fragments</h2>
+    <p><b>Author: </b> Tom Lloyd</p>
+    <p><b>Genre: </b>fantasy</p>
+  
+    <p class><b>Description:</b>Lynx is a mercenary with a sense of honour; a dying breed in the Riven Kingdom. Failed by the nation he served and weary of the skirmishes that plague the continent's principalities, he walks the land in search of purpose. He wants for little so bodyguard work keeps his belly full and his mage-gun loaded. It might never bring a man fame or wealth, but he's not forced to rely on others or kill without cause.<br>
+  
+      Little could compel Lynx to join a mercenary company, but he won't turn his back on a kidnapped girl. At least the job seems simple enough; the mercenaries less stupid and vicious than most he's met over the years.<br>
+      
+      So long as there are no surprises or hidden agendas along the way, it should work out fine.<br>
+      
+      *****<br>
+      
+      Praise for Stranger of Tempest<br>
+      
+      'The most satisfying thing I've read in a long time. Exceeded expectations that weren't even that low and scratched all my itches. Felt like i needed a cigarette afterwards - it was that good.' Goodreads reviewer, ⭐ ⭐ ⭐ ⭐ ⭐<br>
+      
+      'Stranger of Tempest drew me in from the beginning, it has such a brilliant opening! One of the best I've read! It was at that moment that I knew I was going to enjoy this book, it cracked me up and intrigued me.' Goodreads reviewer, ⭐ ⭐ ⭐ ⭐ ⭐<br>
+      
+      'Stranger of Tempest is a fast paced, fun read with memorable characters that you want to know more about! It's a brilliant blend of humour, action, magic, adventure, and more. I can't wait for the next book! I'm so excited to see where this is all going to go!' Goodreads reviewer, ⭐ ⭐ ⭐ ⭐ ⭐<br>
+      
+      'A great rip-roaring take, in the style of Dungeons and Dragons. The characters are real and some are likable while others downright despicable. Loved it.' Goodreads reviewer, ⭐ ⭐ ⭐ ⭐ ⭐</p>
+  </div>
+  
+  <li><div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+    <img src="https://m.media-amazon.com/images/I/91WihM+eoyL._CLa%7C3400,2560%7C91xUHcJevTL.jpg%7C0,0,1696,2560+1704,0,1696,2560_._SY300_.jpg" alt="Book 2">
+    <h2 class="glow">Raven's Blade</h2>
+    <p><b>Author: </b>Anthony Ryan</p>
+    <p><b>Genre: </b>fantasy</p>
+  
+    <p class><b>Description:</b>Anthony Ryan's debut novel Blood Song—the first book of the Raven's Shadow series—took the fantasy world by storm. Now, he continues that saga with The Wolf's Call, which begins a thrilling new story of razor-sharp action and epic adventure.<br>
+  
+      Peace never lasts.<br>
+      
+      Vaelin Al Sorna is a living legend, his name known across the Realm. It was his leadership that overthrew empires, his blade that won hard-fought battles - and his sacrifice that defeated an evil more terrifying than anything the world had ever seen. He won titles aplenty, only to cast aside his earned glory for a quiet life in the Realm's northern reaches.<br>
+      
+      Yet whispers have come from across the sea - rumours of an army called the Steel Horde, led by a man who believes himself a god. Vaelin has no wish to fight another war, but when he learns that Sherin, the woman he lost long ago, has fallen into the Horde's grasp, he resolves to confront this powerful new threat.<br>
+      
+      To this end, Vaelin travels to the realms of the Merchant Kings, a land ruled by honor and intrigue. There, as the drums of war thunder across kingdoms riven by conflict, Vaelin learns a terrible truth: that there are some battles that even he may not be strong enough to win.</p>
+  </div>
+  <li><div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+    <img src="https://m.media-amazon.com/images/I/91r9sx15bTL._CLa%7C3089,2560%7C91Vz9UgPI0L.jpg,A1HgsE473KL.jpg%7C0,0,1404,2560+1685,0,1404,2560+702,0,1685,2560_._SY300_.jpg" alt="Book 2">
+    <h2 class="glow">The Dragon's Legacy</h2>
+    <p><b>Author: </b> Deborah A. Wolf</p>
+    <p><b>Genre: </b>fantasy</p>
+   
+    <p class><b>Description:</b>A world of large-scale epic fantasy” in the tradition of Guy Gavriel Kay and Jacqueline Carey (New York Times–bestselling author Barb Hendee)<br>
+  
+      In the heart of the singing desert, the people are fading from the world. Mothers bear few live children, the warriors and wardens are hard-pressed to protect those who remain, and the vash’ai—the great cats who have called the people kithren for as long as there have been stories—bond with fewer humans each year. High above, the Sun Dragon sings a song of life and love while far below, the Earth Dragon slumbers as she has since the beginning of time. Her sleep is fitful, and from the darkness of her dreams come whispers of war . . . and death.<br>
+       
+      Sulema is a newly minted warrior of the people and a true Ja’Akari—a daughter of the unforgiving desert. When a mysterious young man appears in her home of Aish Kalumm, she learns that the Dragon King is dying in distant Atualon. As the king fades, so does the magic that sings the Earth Dragon to sleep.<br>
+      
+      There are those who wish to keep the dragon trapped in endless slumber. Others would tap her power to claim it for their own. And there are those who would have her wake, so they might laugh as the world burns.</p>
+  </div>
+  <li><div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+    <img src="https://m.media-amazon.com/images/I/91cXYtIYXKL._CLa%7C2933,2400%7C817lfLWQldL.jpg,A1nI5JkDdqL.jpg%7C0,0,1333,2400+1600,0,1333,2400+666,0,1600,2400_._SY300_.jpg" alt="Book 2">
+    <h2 class="glow">Iskari </h2>
+    <p><b>Author: </b>Kristen Ciccarelli</p>
+    <p><b>Genre: </b>fantasy</p>
+    <p class><b>Description:</b>Kristen Ciccarelli’s debut fantasy explores an intricately woven world of deception, inner darkness, and dragons that fantasy fans won’t be able to resist.<br>
+  
+      In the beginning, there was the Namsara: the child of sky and spirit, who carried love and laughter wherever he went. But where there is light, there must be darkness—and so there was also the Iskari. The child of blood and moonlight. The destroyer. The death-bringer.<br>
+      
+      These are the legends that Asha, daughter of the king of Firgaard, has grown up learning in hushed whispers, drawn to the forbidden figures of the past. But it isn’t until she becomes the fiercest, most feared dragon slayer in the land that she takes on the role of the next Iskari—a lonely destiny that leaves her feeling more like a weapon than a girl.<br>
+      
+      Asha conquers each dragon and brings its head to the king, but no kill can free her from the shackles that await at home: her betrothal to the cruel commandant, a man who holds the truth about her nature in his palm.<br>
+      
+      When she’s offered the chance to gain her freedom in exchange for the life of the most powerful dragon in Firgaard, she finds that there may be more truth to the ancient stories than she ever could have expected. With the help of a secret friend—a slave boy from her betrothed’s household—Asha must shed the layers of her Iskari bondage and open her heart to love, light, and a truth that has been kept from her.</p>
+  </div>
+  </li>
+  </ol>
+  </div>
+    </div>
+  </div>
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <div class="comments">
+ <!-- begin wwww.htmlcommentbox.com -->
+ <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
+ <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+ <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16798&num=10&ts=1696781677813");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*--> </script>
+<!-- end www.htmlcommentbox.com -->
+  </div></div> </div>
+ 
+    
+     
+    <hr>
+
+    
+      <p>&copy;2027--EpicInsights.com</p>
+    
+  
+
+<!-- END MAIN -->
+</div>
+
+<script>
+  function showConfirmationBox() {
+    document.getElementById('overlay').style.display = 'flex';
+  }
+
+  // Function to close the confirmation box
+  function closeConfirmationBox() {
+    document.getElementById('overlay').style.display = 'none';
+  }
+
+  // Function to redirect to the targeted site
+  function redirectToTarget() {
+    // Replace 'https://example.com' with the actual URL you want to redirect to
+    window.location.href = 'https://epicinsightspremium.anvil.app';
+  }
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Call w3_close() to close the sidebar when the page loads
+window.onload = function () {
+  w3_close();
+}
+</script>
+
+</body>
+</html>
